@@ -1,7 +1,18 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import styled from "styled-components";
 
+const Menu = ["Google", "Naver", "Nexon", "Laftel", "Facebook"];
+
 const TopUI = props => {
+  useEffect(() => {
+    Menu.map((value, index) => {
+      const menuId = `ml${index}`;
+      const menu = document.getElementById(`ml${index}`);
+      menu.addEventListener("onclick", function() {
+        menu.style.backgroundColor = "blue";
+      });
+    });
+  });
   const browserHeight = window.innerHeight;
   let isMobile = false;
   if (window.innerWidth <= 768) isMobile = true; // 모바일인지 확인
@@ -18,17 +29,22 @@ const TopUI = props => {
         />
         <MenuList /> {/* 메뉴를 뽑아줌 */}
       </TopDiv>
+      <LoginDiv>
+        <Anchor>Login</Anchor>
+        <Anchor>Logout</Anchor>
+      </LoginDiv>
     </>
   );
 };
 
 const MenuList = () => {
-  const Menu = ["Google", "Naver", "Nexon", "Laftel", "Facebook"];
-  return Menu.map((index, value) => {
-    const URL = `https://${index}.com`;
+  return Menu.map((value, index) => {
+    const URL = `#`;
+    const menuId = `ml${index}`;
+
     return (
       <Anchor href={URL}>
-        <MenuDiv>{index}</MenuDiv>
+        <MenuDiv id={menuId}>{value}</MenuDiv>
       </Anchor>
     );
   });
@@ -58,8 +74,8 @@ const Logo = styled.img`
   width: 50px;
   height: 50px;
 
-  margin-left: 15%;
-  margin-right: 10%;
+  margin-left: 10%;
+  margin-right: 8%;
 `;
 
 const Anchor = styled.a`
@@ -94,6 +110,11 @@ const MenuDiv = styled(Div)`
     background-color: #d3d3d3;
     color: #2f4f4f;
   }
+`;
+
+const LoginDiv = styled(Div)`
+  float: right;
+  height: 100%;
 `;
 
 export default TopUI;
