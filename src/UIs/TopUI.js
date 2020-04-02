@@ -28,11 +28,15 @@ const TopUI = props => {
           onClick={() => (window.location.href = "https://naver.com")} // 클릭 시, 해당 링크로 이동
         />
         <MenuList /> {/* 메뉴를 뽑아줌 */}
+        <LoginDiv>
+          <LoginAnchor href="#" login>
+            Login
+          </LoginAnchor>
+          <LoginAnchor href="#" logout>
+            Logout
+          </LoginAnchor>
+        </LoginDiv>
       </TopDiv>
-      <LoginDiv>
-        <Anchor>Login</Anchor>
-        <Anchor>Logout</Anchor>
-      </LoginDiv>
     </>
   );
 };
@@ -76,23 +80,9 @@ const Logo = styled.img`
 
   margin-left: 10%;
   margin-right: 8%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
-
-const Anchor = styled.a`
-  text-decoration: none;
-  font-weight: bold;
-  color: #f0fff0;
-
-  height: 100%;
-
-  &:active {
-    color: white;
-  }
-  &:hover {
-    color: #2f4f4f;
-  }
-`;
-
 const MenuDiv = styled(Div)`
   height: 100%;
 
@@ -112,9 +102,49 @@ const MenuDiv = styled(Div)`
   }
 `;
 
-const LoginDiv = styled(Div)`
-  float: right;
+const Anchor = styled.a`
+  text-decoration: none;
+  font-weight: bold;
+  color: #f0fff0;
+
   height: 100%;
+
+  &:active {
+    color: white;
+  }
+  &:hover {
+    color: #2f4f4f;
+  }
+  &:focus {
+    ${MenuDiv} {
+      background-color: green;
+    }
+  }
+`;
+
+const LoginAnchor = styled(Anchor)`
+  margin-left: 7px;
+
+  padding: 10px 10px;
+
+  background-color: ${props => {
+    if (props.login) return "#639a67";
+    if (props.logout) return "#fe346e";
+    else return "white";
+  }};
+  border: 2px solid #f0fff0;
+  border-radius: 10px 10px 10px 10px;
+`;
+
+const LoginDiv = styled(Div)`
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  right: 0;
+
+  margin-right: 8px;
 `;
 
 export default TopUI;
