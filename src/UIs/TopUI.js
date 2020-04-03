@@ -54,6 +54,9 @@ const MenuList = () => {
   });
 };
 
+// Styled Components
+// Order : Div -> Anchor -> Img
+
 const Div = styled.div`
   margin: 0;
   color: #2c2c2c;
@@ -74,15 +77,6 @@ const TopDiv = styled(Div)`
   background-color: #696969;
 `;
 
-const Logo = styled.img`
-  width: 50px;
-  height: 50px;
-
-  margin-left: 10%;
-  margin-right: 8%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-`;
 const MenuDiv = styled(Div)`
   height: 100%;
 
@@ -100,6 +94,17 @@ const MenuDiv = styled(Div)`
     background-color: #d3d3d3;
     color: #2f4f4f;
   }
+`;
+
+const LoginDiv = styled(Div)`
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  right: 0;
+
+  margin-right: 8px;
 `;
 
 const Anchor = styled.a`
@@ -136,15 +141,14 @@ const LoginAnchor = styled(Anchor)`
   border-radius: 10px 10px 10px 10px;
 `;
 
-const LoginDiv = styled(Div)`
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const Logo = styled.img`
+  width: 50px;
+  height: 50px;
 
-  right: 0;
-
-  margin-right: 8px;
+  margin-left: 10%;
+  margin-right: 8%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 export default TopUI;
