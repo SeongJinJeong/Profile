@@ -33,7 +33,7 @@ const TopUI = props => {
             Login
           </LoginAnchor>
           <LoginAnchor href="#" logout>
-            Logou
+            Logout
           </LoginAnchor>
         </LoginDiv>
       </TopDiv>
