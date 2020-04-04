@@ -1,5 +1,13 @@
 import React, { Component, useEffect } from "react";
 import styled from "styled-components";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from "react-scroll";
 import { IconContext } from "react-icons";
 import { GoMarkGithub } from "react-icons/go";
 import { TiDocumentText } from "react-icons/ti";
@@ -8,13 +16,22 @@ const Menu = ["Google", "Naver", "Nexon", "Laftel", "Facebook"];
 
 const TopUI = props => {
   useEffect(() => {
-    Menu.map((value, index) => {
-      const menuId = `ml${index}`;
-      const menu = document.getElementById(`ml${index}`);
-      menu.addEventListener("onclick", function() {
-        menu.style.backgroundColor = "blue";
-      });
+    Events.scrollEvent.register("begin", function(to, element) {
+      console.log("begin", arguments);
     });
+
+    Events.scrollEvent.register("end", function(to, element) {
+      console.log("end", arguments);
+    });
+
+    scrollSpy.update();
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+    };
   });
   const browserHeight = window.innerHeight;
   let isMobile = false;
@@ -33,9 +50,6 @@ const TopUI = props => {
             <LoginAnchor href="https://github.com/SeongJinJeong">
               <GoMarkGithub />
             </LoginAnchor>
-            <LoginAnchor href="https://github.com/SeongJinJeong">
-              <TiDocumentText />
-            </LoginAnchor>
           </IconContext.Provider>
         </LoginDiv>
       </TopDiv>
@@ -45,12 +59,14 @@ const TopUI = props => {
 
 const MenuList = () => {
   return Menu.map((value, index) => {
-    const URL = `#`;
+    const URL = `#${value}`;
     const menuId = `ml${index}`;
 
     return (
-      <Anchor href={URL}>
-        <MenuDiv id={menuId}>{value}</MenuDiv>
+      <Anchor href={URL} key={index}>
+        <Link to={value} spy={true} smooth={true}>
+          <MenuDiv id={menuId}>{value}</MenuDiv>
+        </Link>
       </Anchor>
     );
   });
@@ -96,6 +112,10 @@ const MenuDiv = styled(Div)`
     background-color: #d3d3d3;
     color: #2f4f4f;
   }
+
+  &:link {
+    background-color: palevioletred;
+  }
 `;
 
 const LoginDiv = styled(Div)`
@@ -106,7 +126,7 @@ const LoginDiv = styled(Div)`
 
   right: 0;
 
-  margin-right: 10px;
+  margin-right: 20px;
 `;
 
 const Anchor = styled.a`
@@ -122,10 +142,8 @@ const Anchor = styled.a`
   &:hover {
     color: #2f4f4f;
   }
-  &:focus {
-    ${MenuDiv} {
-      background-color: green;
-    }
+  &:visited {
+    color: yellow;
   }
 `;
 
