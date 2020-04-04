@@ -25,7 +25,7 @@ const TopUI = props => {
       <TopDiv height={NaviHeiht} isMobile={isMobile}>
         <Logo
           id="logo"
-          onClick={() => (window.location.href = "https://naver.com")} // 클릭 시, 해당 링크로 이동
+          onClick={() => (window.location.href = "https://google.com")} // 클릭 시, 해당 링크로 이동
         />
         <MenuList /> {/* 메뉴를 뽑아줌 */}
         <LoginDiv>
