@@ -12,6 +12,8 @@ import { IconContext } from "react-icons";
 import { GoMarkGithub } from "react-icons/go";
 import { TiDocumentText } from "react-icons/ti";
 
+import "./TopUI.css";
+
 const Menu = ["Google", "Naver", "Nexon", "Laftel", "Facebook"];
 
 const TopUI = props => {
@@ -64,7 +66,7 @@ const MenuList = () => {
 
     return (
       <Anchor href={URL} key={index}>
-        <Link to={value} spy={true} smooth={true}>
+        <Link to={value} spy={true} smooth={true} activeClass="active">
           <MenuDiv id={menuId}>{value}</MenuDiv>
         </Link>
       </Anchor>
@@ -113,7 +115,7 @@ const MenuDiv = styled(Div)`
     color: #2f4f4f;
   }
 
-  &:link {
+  &:selection {
     background-color: palevioletred;
   }
 `;
