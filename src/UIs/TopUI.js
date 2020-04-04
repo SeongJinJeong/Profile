@@ -1,5 +1,8 @@
 import React, { Component, useEffect } from "react";
 import styled from "styled-components";
+import { IconContext } from "react-icons";
+import { GoMarkGithub } from "react-icons/go";
+import { TiDocumentText } from "react-icons/ti";
 
 const Menu = ["Google", "Naver", "Nexon", "Laftel", "Facebook"];
 
@@ -23,18 +26,17 @@ const TopUI = props => {
   return (
     <>
       <TopDiv height={NaviHeiht} isMobile={isMobile}>
-        <Logo
-          id="logo"
-          onClick={() => (window.location.href = "https://google.com")} // 클릭 시, 해당 링크로 이동
-        />
+        <Logo id="logo" />
         <MenuList /> {/* 메뉴를 뽑아줌 */}
         <LoginDiv>
-          <LoginAnchor href="#" login>
-            Login
-          </LoginAnchor>
-          <LoginAnchor href="#" logout>
-            Logout
-          </LoginAnchor>
+          <IconContext.Provider value={{ color: "white", size: "2em" }}>
+            <LoginAnchor href="https://github.com/SeongJinJeong">
+              <GoMarkGithub />
+            </LoginAnchor>
+            <LoginAnchor href="https://github.com/SeongJinJeong">
+              <TiDocumentText />
+            </LoginAnchor>
+          </IconContext.Provider>
         </LoginDiv>
       </TopDiv>
     </>
@@ -104,7 +106,7 @@ const LoginDiv = styled(Div)`
 
   right: 0;
 
-  margin-right: 8px;
+  margin-right: 10px;
 `;
 
 const Anchor = styled.a`
@@ -128,17 +130,7 @@ const Anchor = styled.a`
 `;
 
 const LoginAnchor = styled(Anchor)`
-  margin-left: 7px;
-
-  padding: 10px 10px;
-
-  background-color: ${props => {
-    if (props.login) return "#639a67";
-    if (props.logout) return "#fe346e";
-    else return "white";
-  }};
-  border: 2px solid #f0fff0;
-  border-radius: 10px 10px 10px 10px;
+  margin-left: 5px;
 `;
 
 const Logo = styled.img`
