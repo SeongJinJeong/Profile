@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import * as Scroll from "react-scroll";
 import {
   Link,
@@ -10,7 +10,11 @@ import {
 } from "react-scroll";
 import styled from "styled-components";
 
-const Contents = () => {
+
+const Contents = (props) => {
+
+  const [naviHeight,setNaviHeight] = useState("ss");
+
   useEffect(() => {
     Events.scrollEvent.register("begin", function(to, element) {
       console.log("begin", arguments);
@@ -21,6 +25,11 @@ const Contents = () => {
     });
 
     scrollSpy.update();
+    
+    const getNaviHeight = document.querySelector("#TopNavi")
+    const NaviHeight = getNaviHeight;
+    setNaviHeight(NaviHeight.offsetHeight)
+
   }, []);
 
   useEffect(() => {
@@ -31,22 +40,22 @@ const Contents = () => {
   });
 
   return (
-    <>
-      <Div id="Google">Google</Div>
-      <Div id="Naver" color="red">
-        Naver
-      </Div>
-      <Div id="Nexon" color="green">
-        Nexon
-      </Div>
-      <Div id="Laftel" color="white">
-        Laftel
-      </Div>
-      <Div id="Facebook" color="purple">
-        Facebook
-      </Div>
-    </>
+    <RenderDiv menu={props.menu} naviHeight = {naviHeight}/>
   );
+};
+
+const RenderDiv = (props) =>{
+  const Menu = props.menu;
+  return Menu.map((value,index)=>{
+    if(index === 0) return (
+      <Div color={index} id={value} key={index} NaviHeight={props.naviHeight}>
+        {value}
+      </Div>
+    )
+    return(
+      <Div color={index} id={value} key={index}>{value}</Div>
+    )
+  })
 };
 
 const Div = styled.div`
@@ -57,7 +66,23 @@ const Div = styled.div`
   align-items: center;
   justify-content: center;
 
-  background-color: ${props => props.color || "yellow"};
+  margin-top : ${props=>props.NaviHeight || 0}px;
+
+  background-color: ${props =>{
+    if(props.color) {
+      switch(props.color){
+        case 1 : return "yellow"
+        case 2 : return "red"
+        case 3 : return "green"
+        case 4 : return "white"
+        case 5 : return "purple"
+        default : return "palevioletred"
+      }
+    }
+    else{
+      return "palevioletred"
+    }
+  }};
 `;
 
 export default Contents;

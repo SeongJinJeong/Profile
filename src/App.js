@@ -5,12 +5,15 @@ import Contents from "./UIs/Contents";
 const Menu = ["Google", "Naver", "Nexon", "Laftel", "Facebook"];
 
 function App() {
+
   return (
     <div className="App">
-      <TOPUI menu={Menu}/>
-      <Contents menu={Menu}/>
+      <TOPUI menu={Menu} />
+      <Contents menu={Menu} />
     </div>
   );
 }
+
+console.log(document.getElementsByClassName("TopNavi"));
 
 export default App;

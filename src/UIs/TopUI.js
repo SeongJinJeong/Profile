@@ -43,7 +43,7 @@ const TopUI = props => {
 
   return (
     <>
-      <TopDiv height={NaviHeiht} isMobile={isMobile}>
+      <TopDiv height={NaviHeiht} isMobile={isMobile} id="TopNavi">
         <Logo id="logo" />
         <MenuList menu = {props.menu}/> {/* 메뉴를 뽑아줌 */}
         <LoginDiv>
