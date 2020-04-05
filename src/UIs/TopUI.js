@@ -6,7 +6,7 @@ import {
   Events,
   animateScroll as scroll,
   scrollSpy,
-  scroller
+  scroller,
 } from "react-scroll";
 import { IconContext } from "react-icons";
 import { GoMarkGithub } from "react-icons/go";
@@ -14,13 +14,13 @@ import { TiDocumentText } from "react-icons/ti";
 
 import "./TopUI.css";
 
-const TopUI = props => {
+const TopUI = (props) => {
   useEffect(() => {
-    Events.scrollEvent.register("begin", function(to, element) {
+    Events.scrollEvent.register("begin", function (to, element) {
       console.log("begin", arguments);
     });
 
-    Events.scrollEvent.register("end", function(to, element) {
+    Events.scrollEvent.register("end", function (to, element) {
       console.log("end", arguments);
     });
 
@@ -58,7 +58,7 @@ const TopUI = props => {
   );
 };
 
-const MenuList = props => {
+const MenuList = (props) => {
   const Menu = props.menu;
   return Menu.map((value, index) => {
     return (
@@ -88,7 +88,7 @@ const Div = styled.div`
 `;
 
 const TopDiv = styled(Div)`
-  height: ${props => props.height || 50}px;
+  height: ${(props) => props.height || 50}px;
   display: flex;
   justify-content: flex-start;
   flex-direction: row;

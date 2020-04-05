@@ -6,18 +6,18 @@ import {
   Events,
   animateScroll as scroll,
   scrollSpy,
-  scroller
+  scroller,
 } from "react-scroll";
 import styled from "styled-components";
 
-const Contents = props => {
+const Contents = (props) => {
   const [naviHeight, setNaviHeight] = useState("");
   useEffect(() => {
-    Events.scrollEvent.register("begin", function(to, element) {
+    Events.scrollEvent.register("begin", function (to, element) {
       console.log("begin", arguments);
     });
 
-    Events.scrollEvent.register("end", function(to, element) {
+    Events.scrollEvent.register("end", function (to, element) {
       console.log("end", arguments);
     });
 
@@ -25,7 +25,6 @@ const Contents = props => {
 
     const getNaviHeight = document.querySelector("#TopNavi");
     setNaviHeight(getNaviHeight.clientHeight);
-
   }, []);
 
   useEffect(() => {
@@ -35,10 +34,10 @@ const Contents = props => {
     };
   });
 
-  return <RenderDiv menu={props.menu} height={naviHeight}/>;
+  return <RenderDiv menu={props.menu} height={naviHeight} />;
 };
 
-const RenderDiv = props => {
+const RenderDiv = (props) => {
   const Menu = props.menu;
   return Menu.map((value, index) => {
     if (index === 0)
@@ -47,13 +46,13 @@ const RenderDiv = props => {
           {value}
         </Div>
       );
-    else{
+    else {
       return (
-      <Div color={index} id={value} key={index}>
-        {value}
-      </Div>
-    );}
-    
+        <Div color={index} id={value} key={index}>
+          {value}
+        </Div>
+      );
+    }
   });
 };
 
@@ -65,9 +64,9 @@ const Div = styled.div`
   align-items: center;
   justify-content: center;
 
-  margin-top:${props=>props.shouldMargin || 0}px;
+  margin-top: ${(props) => props.shouldMargin || 0}px;
 
-  background-color: ${props => {
+  background-color: ${(props) => {
     if (props.color) {
       switch (props.color) {
         case 1:
