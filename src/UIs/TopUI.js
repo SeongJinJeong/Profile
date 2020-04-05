@@ -65,14 +65,16 @@ const MenuList = (props) => {
     const menuId = `ml${index}`;
 
     return (
-      <Anchor href={URL} key={index}>
-        <Link to={value} spy={true} smooth={true} activeClass="active" offset={-props.NaviHeight}>
-          <MenuDiv id={menuId}>{value}</MenuDiv>
+      <MenuDiv>
+        <Link to={value} spy={true} smooth={true} activeClass="active" className="menu" id={menuId} offset={-props.NaviHeight}>
+          {value}
         </Link>
-      </Anchor>
+      </MenuDiv>
     );
   });
 };
+
+
 
 // Styled Components
 // Order : Div -> Anchor -> Img
@@ -110,12 +112,14 @@ const MenuDiv = styled(Div)`
 
   min-width: 75px;
 
+  font-weight : bold;
+
   &:hover {
     background-color: #d3d3d3;
     color: #2f4f4f;
   }
 
-  &:selection {
+  &.active {
     background-color: palevioletred;
   }
 `;

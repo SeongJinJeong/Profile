@@ -1,4 +1,7 @@
 .active {
-  height: 100%;
-  color: black;
+  color : blue;
+}
+
+.menu {
+  font-weight: bold;
 }
