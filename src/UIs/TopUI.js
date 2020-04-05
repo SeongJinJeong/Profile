@@ -61,9 +61,6 @@ const TopUI = props => {
 const MenuList = props => {
   const Menu = props.menu;
   return Menu.map((value, index) => {
-    const URL = `#${value}`;
-    const menuId = `ml${index}`;
-
     return (
       <Link
         to={value}
@@ -71,7 +68,8 @@ const MenuList = props => {
         smooth={true}
         activeClass="active"
         className="menu"
-        id={menuId}
+        duration="1000"
+        delay="200"
         offset={-props.NaviHeight-3}
       >
         {value}
