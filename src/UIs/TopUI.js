@@ -14,7 +14,6 @@ import { TiDocumentText } from "react-icons/ti";
 
 import "./TopUI.css";
 
-
 const TopUI = props => {
   useEffect(() => {
     Events.scrollEvent.register("begin", function(to, element) {
@@ -45,7 +44,8 @@ const TopUI = props => {
     <>
       <TopDiv height={NaviHeight} isMobile={isMobile} id="TopNavi">
         <Logo id="logo" />
-        <MenuList menu = {props.menu} NaviHeight={NaviHeight}/> {/* 메뉴를 뽑아줌 */}
+        <MenuList menu={props.menu} NaviHeight={NaviHeight} />{" "}
+        {/* 메뉴를 뽑아줌 */}
         <LoginDiv>
           <IconContext.Provider value={{ color: "white", size: "2em" }}>
             <LoginAnchor href="https://github.com/SeongJinJeong">
@@ -58,23 +58,27 @@ const TopUI = props => {
   );
 };
 
-const MenuList = (props) => {
+const MenuList = props => {
   const Menu = props.menu;
   return Menu.map((value, index) => {
     const URL = `#${value}`;
     const menuId = `ml${index}`;
 
     return (
-      <MenuDiv>
-        <Link to={value} spy={true} smooth={true} activeClass="active" className="menu" id={menuId} offset={-props.NaviHeight}>
-          {value}
-        </Link>
-      </MenuDiv>
+      <Link
+        to={value}
+        spy={true}
+        smooth={true}
+        activeClass="active"
+        className="menu"
+        id={menuId}
+        offset={-props.NaviHeight}
+      >
+        {value}
+      </Link>
     );
   });
 };
-
-
 
 // Styled Components
 // Order : Div -> Anchor -> Img
@@ -97,31 +101,6 @@ const TopDiv = styled(Div)`
   width: 100%;
 
   background-color: #696969;
-`;
-
-const MenuDiv = styled(Div)`
-  height: 100%;
-
-  color: #f0fff0;
-
-  padding: 0 20px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  min-width: 75px;
-
-  font-weight : bold;
-
-  &:hover {
-    background-color: #d3d3d3;
-    color: #2f4f4f;
-  }
-
-  &.active {
-    background-color: palevioletred;
-  }
 `;
 
 const LoginDiv = styled(Div)`
