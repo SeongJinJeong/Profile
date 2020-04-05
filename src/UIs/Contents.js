@@ -39,6 +39,12 @@ const Contents = () => {
       <Div id="Nexon" color="green">
         Nexon
       </Div>
+      <Div id="Laftel" color="white">
+        Laftel
+      </Div>
+      <Div id="Facebook" color="purple">
+        Facebook
+      </Div>
     </>
   );
 };

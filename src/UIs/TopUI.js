@@ -14,7 +14,6 @@ import { TiDocumentText } from "react-icons/ti";
 
 import "./TopUI.css";
 
-const Menu = ["Google", "Naver", "Nexon", "Laftel", "Facebook"];
 
 const TopUI = props => {
   useEffect(() => {
@@ -46,7 +45,7 @@ const TopUI = props => {
     <>
       <TopDiv height={NaviHeiht} isMobile={isMobile}>
         <Logo id="logo" />
-        <MenuList /> {/* 메뉴를 뽑아줌 */}
+        <MenuList menu = {props.menu}/> {/* 메뉴를 뽑아줌 */}
         <LoginDiv>
           <IconContext.Provider value={{ color: "white", size: "2em" }}>
             <LoginAnchor href="https://github.com/SeongJinJeong">
@@ -59,7 +58,8 @@ const TopUI = props => {
   );
 };
 
-const MenuList = () => {
+const MenuList = (props) => {
+  const Menu = props.menu;
   return Menu.map((value, index) => {
     const URL = `#${value}`;
     const menuId = `ml${index}`;
