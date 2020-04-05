@@ -17,10 +17,13 @@
   min-width: 75px;
 
   font-weight: bold;
+  font-size : 20px;
 }
 
 .menu:hover {
   background-color: #d3d3d3;
   color: #2f4f4f !important;
   cursor: pointer;
+
+  font-size : 22px;
 }
