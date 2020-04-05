@@ -70,7 +70,7 @@ const MenuList = props => {
         className="menu"
         duration="1000"
         delay="200"
-        offset={-props.NaviHeight-3}
+        offset={-props.NaviHeight - 3}
       >
         {value}
       </Link>

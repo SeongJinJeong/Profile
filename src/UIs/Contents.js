@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import * as Scroll from "react-scroll";
 import {
   Link,
@@ -10,11 +10,7 @@ import {
 } from "react-scroll";
 import styled from "styled-components";
 
-
-const Contents = (props) => {
-
-  
-
+const Contents = props => {
   useEffect(() => {
     Events.scrollEvent.register("begin", function(to, element) {
       console.log("begin", arguments);
@@ -25,8 +21,6 @@ const Contents = (props) => {
     });
 
     scrollSpy.update();
-
-
   }, []);
 
   useEffect(() => {
@@ -36,23 +30,24 @@ const Contents = (props) => {
     };
   });
 
-  return (
-    <RenderDiv menu={props.menu}/>
-  );
+  return <RenderDiv menu={props.menu} />;
 };
 
-const RenderDiv = (props) =>{
+const RenderDiv = props => {
   const Menu = props.menu;
-  return Menu.map((value,index)=>{
-    if(index === 0) return (
-      <Div color={index} id={value} key={index} >
+  return Menu.map((value, index) => {
+    if (index === 0)
+      return (
+        <Div color={index} id={value} key={index}>
+          {value}
+        </Div>
+      );
+    return (
+      <Div color={index} id={value} key={index}>
         {value}
       </Div>
-    )
-    return(
-      <Div color={index} id={value} key={index}>{value}</Div>
-    )
-  })
+    );
+  });
 };
 
 const Div = styled.div`
@@ -63,19 +58,24 @@ const Div = styled.div`
   align-items: center;
   justify-content: center;
 
-  background-color: ${props =>{
-    if(props.color) {
-      switch(props.color){
-        case 1 : return "yellow"
-        case 2 : return "red"
-        case 3 : return "green"
-        case 4 : return "white"
-        case 5 : return "purple"
-        default : return "palevioletred"
+  background-color: ${props => {
+    if (props.color) {
+      switch (props.color) {
+        case 1:
+          return "yellow";
+        case 2:
+          return "red";
+        case 3:
+          return "green";
+        case 4:
+          return "white";
+        case 5:
+          return "purple";
+        default:
+          return "palevioletred";
       }
-    }
-    else{
-      return "palevioletred"
+    } else {
+      return "palevioletred";
     }
   }};
 `;

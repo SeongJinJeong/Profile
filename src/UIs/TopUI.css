@@ -1,6 +1,6 @@
 .active {
-  background-color :  #363636;
-  color : #f0fff0 !important;
+  background-color: #363636;
+  color: #f0fff0 !important;
 }
 
 .menu {
@@ -16,11 +16,10 @@
 
   min-width: 75px;
 
-  font-weight : bold;
+  font-weight: bold;
 }
-
 
 .menu:hover {
   background-color: #d3d3d3;
-  color: #2f4f4f!important;
+  color: #2f4f4f !important;
 }
