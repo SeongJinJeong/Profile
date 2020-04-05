@@ -73,9 +73,10 @@ const MenuList = (props) => {
           smooth={true}
           activeClass="active"
           className="menu"
-          duration="1000"
-          delay="200"
+          duration={1000}
+          delay={200}
           offset={-props.NaviHeight + 0.1}
+          key={index}
         >
           {value}
         </Link>
@@ -87,9 +88,10 @@ const MenuList = (props) => {
         smooth={true}
         activeClass="active"
         className="menu"
-        duration="1000"
-        delay="200"
+        duration={1000}
+        delay={200}
         offset={-props.NaviHeight - 0.1}
+        key={index}
       >
         {value}
       </Link>
