@@ -13,7 +13,7 @@ import styled from "styled-components";
 
 const Contents = (props) => {
 
-  const [naviHeight,setNaviHeight] = useState("ss");
+  
 
   useEffect(() => {
     Events.scrollEvent.register("begin", function(to, element) {
@@ -25,10 +25,7 @@ const Contents = (props) => {
     });
 
     scrollSpy.update();
-    
-    const getNaviHeight = document.querySelector("#TopNavi")
-    const NaviHeight = getNaviHeight;
-    setNaviHeight(NaviHeight.offsetHeight)
+
 
   }, []);
 
@@ -40,7 +37,7 @@ const Contents = (props) => {
   });
 
   return (
-    <RenderDiv menu={props.menu} naviHeight = {naviHeight}/>
+    <RenderDiv menu={props.menu}/>
   );
 };
 
@@ -48,7 +45,7 @@ const RenderDiv = (props) =>{
   const Menu = props.menu;
   return Menu.map((value,index)=>{
     if(index === 0) return (
-      <Div color={index} id={value} key={index} NaviHeight={props.naviHeight}>
+      <Div color={index} id={value} key={index} >
         {value}
       </Div>
     )
@@ -65,8 +62,6 @@ const Div = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-top : ${props=>props.NaviHeight || 0}px;
 
   background-color: ${props =>{
     if(props.color) {

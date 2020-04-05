@@ -38,14 +38,14 @@ const TopUI = props => {
   let isMobile = false;
   if (window.innerWidth <= 768) isMobile = true; // 모바일인지 확인
 
-  let NaviHeiht = (browserHeight / 100) * 10;
-  if (isMobile === true) NaviHeiht = (browserHeight / 100) * 12; // 모바일 or 웹 높이 지정
+  let NaviHeight = (browserHeight / 100) * 10;
+  if (isMobile === true) NaviHeight = (browserHeight / 100) * 12; // 모바일 or 웹 높이 지정
 
   return (
     <>
-      <TopDiv height={NaviHeiht} isMobile={isMobile} id="TopNavi">
+      <TopDiv height={NaviHeight} isMobile={isMobile} id="TopNavi">
         <Logo id="logo" />
-        <MenuList menu = {props.menu}/> {/* 메뉴를 뽑아줌 */}
+        <MenuList menu = {props.menu} NaviHeight={NaviHeight}/> {/* 메뉴를 뽑아줌 */}
         <LoginDiv>
           <IconContext.Provider value={{ color: "white", size: "2em" }}>
             <LoginAnchor href="https://github.com/SeongJinJeong">
@@ -66,7 +66,7 @@ const MenuList = (props) => {
 
     return (
       <Anchor href={URL} key={index}>
-        <Link to={value} spy={true} smooth={true} activeClass="active">
+        <Link to={value} spy={true} smooth={true} activeClass="active" offset={-props.NaviHeight}>
           <MenuDiv id={menuId}>{value}</MenuDiv>
         </Link>
       </Anchor>
