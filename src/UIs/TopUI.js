@@ -72,7 +72,7 @@ const MenuList = props => {
         activeClass="active"
         className="menu"
         id={menuId}
-        offset={-props.NaviHeight}
+        offset={-props.NaviHeight-3}
       >
         {value}
       </Link>
