@@ -61,6 +61,21 @@ const TopUI = (props) => {
 const MenuList = (props) => {
   const Menu = props.menu;
   return Menu.map((value, index) => {
+    if (index === 1)
+      return (
+        <Link
+          to={value}
+          spy={true}
+          smooth={true}
+          activeClass="active"
+          className="menu"
+          duration="1000"
+          delay="200"
+          offset={-props.NaviHeight + 0.1}
+        >
+          {value}
+        </Link>
+      );
     return (
       <Link
         to={value}
@@ -70,7 +85,7 @@ const MenuList = (props) => {
         className="menu"
         duration="1000"
         delay="200"
-        offset={-props.NaviHeight - 3}
+        offset={-props.NaviHeight - 0.1}
       >
         {value}
       </Link>
