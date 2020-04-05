@@ -43,7 +43,7 @@ const TopUI = (props) => {
   return (
     <>
       <TopDiv height={NaviHeight} isMobile={isMobile} id="TopNavi">
-        <Logo id="logo" />
+        <Logo id="logo" src="./logo.png"/>
         <MenuList menu={props.menu} NaviHeight={NaviHeight} />{" "}
         {/* 메뉴를 뽑아줌 */}
         <LoginDiv>
@@ -135,8 +135,8 @@ const LoginAnchor = styled(Anchor)`
 `;
 
 const Logo = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 150px;
 
   margin-left: 10%;
   margin-right: 8%;
