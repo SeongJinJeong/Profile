@@ -48,7 +48,7 @@ const RenderDiv = (props) => {
       );
     else {
       return (
-        <Div color={index} id={value} key={index}>
+        <Div color={index} id={value} key={index} lastContent={index===Menu.length-1?true:false}>
           {value}
         </Div>
       );
@@ -65,6 +65,7 @@ const Div = styled.div`
   justify-content: center;
 
   margin-top: ${(props) => props.shouldMargin || 0}px;
+  margin-bottom : ${props => props.lastContent ? "300px" : null};
 
   background-color: ${(props) => {
     if (props.color) {

@@ -40,14 +40,16 @@ const TopUI = (props) => {
   let NaviHeight = (browserHeight / 100) * 10;
   if (isMobile === true) NaviHeight = (browserHeight / 100) * 12; // 모바일 or 웹 높이 지정
 
-  const scrollToTop = () =>{
+  const scrollToTop = () => {
     scroll.scrollToTop();
-  }
+  };
 
   return (
     <>
       <TopDiv height={NaviHeight} isMobile={isMobile} id="TopNavi">
-        <LogoAnchor onClick={scrollToTop}><Logo id="logo" src="./logo.png"/></LogoAnchor>
+        <LogoAnchor onClick={scrollToTop}>
+          <Logo id="logo" src="./logo.png" />
+        </LogoAnchor>
         <MenuList menu={props.menu} NaviHeight={NaviHeight} />{" "}
         {/* 메뉴를 뽑아줌 */}
         <LoginDiv>
@@ -64,33 +66,19 @@ const TopUI = (props) => {
 
 const MenuList = (props) => {
   const Menu = props.menu;
+  const MenuLen = Menu.length;
+  console.log(MenuLen)
   return Menu.map((value, index) => {
-    if (index === 1)
-      return (
-        <Link
-          to={value}
-          spy={true}
-          smooth={true}
-          activeClass="active"
-          className="menu"
-          duration={1000}
-          delay={200}
-          offset={-props.NaviHeight + 0.1}
-          key={index}
-        >
-          {value}
-        </Link>
-      );
     return (
       <Link
         to={value}
         spy={true}
         smooth={true}
         activeClass="active"
-        className="menu"
+        className={index===MenuLen-1 ? "menu lastmenu" : "menu"}
         duration={1000}
         delay={200}
-        offset={-props.NaviHeight - 0.1}
+        offset={index === 1 ? -props.NaviHeight + 0.1 : -props.NaviHeight - 0.1}
         key={index}
       >
         {value}
@@ -156,17 +144,15 @@ const LoginAnchor = styled(Anchor)`
 `;
 
 const LogoAnchor = styled.a`
-margin-left: 10%;
-margin-right: 5%;
-margin-top: 10px;
-margin-bottom: 10px;
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 const Logo = styled.img`
   width: 150px;
   height: 150px;
-
-
 `;
 
 export default TopUI;
