@@ -9,6 +9,7 @@ import {
   scroller,
 } from "react-scroll";
 import styled from "styled-components";
+import Jumbo from "./Jumbo";
 
 const Contents = (props) => {
   const [naviHeight, setNaviHeight] = useState("");
@@ -34,7 +35,12 @@ const Contents = (props) => {
     };
   });
 
-  return <RenderDiv menu={props.menu} height={naviHeight} />;
+  return (
+    <>
+      <Jumbo height={naviHeight}/>
+      <RenderDiv menu={props.menu} height={naviHeight} />
+    </>
+  );
 };
 
 const RenderDiv = (props) => {
@@ -48,7 +54,12 @@ const RenderDiv = (props) => {
       );
     else {
       return (
-        <Div color={index} id={value} key={index} lastContent={index===Menu.length-1?true:false}>
+        <Div
+          color={index}
+          id={value}
+          key={index}
+          lastContent={index === Menu.length - 1 ? true : false}
+        >
           {value}
         </Div>
       );
@@ -57,15 +68,15 @@ const RenderDiv = (props) => {
 };
 
 const Div = styled.div`
-  width: 800 px;
+  width: 100%;
   height: 800px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin-top: ${(props) => props.shouldMargin || 0}px;
-  margin-bottom : ${props => props.lastContent ? "300px" : null};
+  // margin-top: ${(props) => props.shouldMargin || 0}px;
+  margin-bottom: ${(props) => (props.lastContent ? "300px" : null)};
 
   background-color: ${(props) => {
     if (props.color) {

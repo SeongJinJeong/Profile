@@ -94,6 +94,8 @@ const Div = styled.div`
   margin: 0;
   color: #2c2c2c;
   background-color: #696969;
+  z-index : 1;
+  position : relative;
 `;
 
 const TopDiv = styled(Div)`
@@ -153,6 +155,9 @@ const LogoAnchor = styled.a`
 const Logo = styled.img`
   width: 150px;
   height: 150px;
+  &:hover {
+    cursor : pointer;
+  }
 `;
 
 export default TopUI;
