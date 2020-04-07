@@ -7,9 +7,9 @@ import Modal from "react-modal";
 Modal.setAppElement("#root");
 
 const startTime = 1560092400;
-const curTime = Math.floor(Date.now()/1000);
+const curTime = Math.floor(Date.now() / 1000);
 
-const didDate = Math.floor((curTime - startTime)/86400)
+const didDate = Math.floor((curTime - startTime) / 86400);
 const wholeDate = 1035;
 
 const Jumbo = (props) => {
@@ -72,10 +72,13 @@ const Jumbo = (props) => {
   );
 };
 
-const RemainDate = () =>{
-    return (
-        <ModalContent lastChild>잔여복무일 : {didDate} / {wholeDate} ({Math.floor((didDate/wholeDate)*100)}%)</ModalContent>
-    )
+const RemainDate = () => {
+  return (
+    <ModalContent lastChild>
+      잔여복무일 : {didDate} / {wholeDate} (
+      {Math.floor((didDate / wholeDate) * 100)}%)
+    </ModalContent>
+  );
 };
 
 const JumboDiv = styled.div`
@@ -141,10 +144,10 @@ const ModalTag = styled.p`
 `;
 
 const ModalContent = styled.p`
-  font-size: ${props=>props.lastChild?20:22}px;
-  ${(props) => (props.firstChild||props.lastChild ? null : "margin-top:0px")};
+  font-size: ${(props) => (props.lastChild ? 20 : 22)}px;
+  ${(props) => (props.firstChild || props.lastChild ? null : "margin-top:0px")};
   ${(props) => (props.lastChild ? null : "margin-bottom: 0")};
-  font-weight : ${props=>props.lastChild?"bold":null}
+  font-weight: ${(props) => (props.lastChild ? "bold" : null)};
 `;
 
 export default Jumbo;
