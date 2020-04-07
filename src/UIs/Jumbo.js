@@ -6,6 +6,12 @@ import { FaReact } from "react-icons/fa";
 import Modal from "react-modal";
 Modal.setAppElement("#root");
 
+const startTime = 1560092400;
+const curTime = Math.floor(Date.now()/1000);
+
+const didDate = Math.floor((curTime - startTime)/86400)
+const wholeDate = 1035;
+
 const Jumbo = (props) => {
   const clientHeight = document.body.clientHeight;
   const [isModalOpen, setModalOpen] = useState(false);
@@ -24,8 +30,9 @@ const Jumbo = (props) => {
               <FaReact
                 onMouseOver={() => {
                   openModal();
-                }} style = {{
-                    "z-index" : 0
+                }}
+                style={{
+                  "z-index": 0,
                 }}
               />
             </ReactLogo>
@@ -46,15 +53,29 @@ const Jumbo = (props) => {
               opacity: 1,
               width: "30%",
               height: "30%",
-              justifyContent: "center",
-              alignItems : "center",
-              margin : "auto"
+              margin: "auto",
             },
           }}
-        ></Modal>
+        >
+          <ModalDiv>
+            <ModalTitle>정성진</ModalTitle>
+            <ModalSub>(Jeong Seong Jin)</ModalSub>
+            <ModalTag>#산업기능요원 #React #Developer #Flysher #QA</ModalTag>
+            <ModalContent firstChild>- 생년월일 : 2000/07/18</ModalContent>
+            <ModalContent>- 학력 : 한세사이버보안고등학교 졸업</ModalContent>
+            <ModalContent>- 경력 : Flysher (QA)</ModalContent>
+            <RemainDate />
+          </ModalDiv>
+        </Modal>
       </JumboDiv>
     </>
   );
+};
+
+const RemainDate = () =>{
+    return (
+        <ModalContent lastChild>잔여복무일 : {didDate} / {wholeDate} ({Math.floor((didDate/wholeDate)*100)}%)</ModalContent>
+    )
 };
 
 const JumboDiv = styled.div`
@@ -92,6 +113,38 @@ const ReactLogo = styled.button`
   background-color: black;
   border: none;
   z-index: -1;
+`;
+
+const ModalDiv = styled.div`
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+`;
+
+const ModalTitle = styled.p`
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+`;
+const ModalSub = styled.p`
+  font-size: 20px;
+  font-weight: light-bold;
+  margin: 0;
+`;
+const ModalTag = styled.p`
+  font-size: 25px;
+  margin-bottom: none;
+  color: blue;
+  font-weight: bold;
+`;
+
+const ModalContent = styled.p`
+  font-size: ${props=>props.lastChild?20:22}px;
+  ${(props) => (props.firstChild||props.lastChild ? null : "margin-top:0px")};
+  ${(props) => (props.lastChild ? null : "margin-bottom: 0")};
+  font-weight : ${props=>props.lastChild?"bold":null}
 `;
 
 export default Jumbo;
