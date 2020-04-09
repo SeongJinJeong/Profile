@@ -10,7 +10,7 @@ import {
 } from "react-scroll";
 import styled from "styled-components";
 import Jumbo from "./Jumbo";
-import TimeLine from './TimeLine'
+import TimeLines from "./TimeLine";
 
 const Contents = (props) => {
   const [naviHeight, setNaviHeight] = useState("");
@@ -38,8 +38,8 @@ const Contents = (props) => {
 
   return (
     <>
-      <Jumbo height={naviHeight}/>
-      <TimeLine />
+      <Jumbo height={naviHeight} />
+      <div id="TimeLine"><TimeLines/></div>
       <RenderDiv menu={props.menu} height={naviHeight} />
     </>
   );
@@ -50,7 +50,7 @@ const RenderDiv = (props) => {
   return Menu.map((value, index) => {
     if (index === 0)
       return (
-        <Div color={index} id={value} key={index} shouldMargin={props.height}>
+        <Div color={index}  key={index} shouldMargin={props.height}>
           {value}
         </Div>
       );

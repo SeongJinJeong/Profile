@@ -84,7 +84,7 @@ const RemainDate = () => {
 const JumboDiv = styled.div`
   width: 100%;
   height: ${(props) => props.clientHeight * 0.1}px;
-  min-height: 80px;
+  min-height: ${(props) => props.clientHeight * 0.1}px;
   background-color: black;
   display: flex;
   justify-content: center;
@@ -103,6 +103,7 @@ const JumboItemDiv = styled.div`
 const JumboTitle = styled.p`
   font-weight: 500;
   font-size: 50px;
+  text-shadow: 6px 2px 2px gray;
 `;
 
 const KeepRotate = keyframes`
