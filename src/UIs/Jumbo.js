@@ -103,6 +103,8 @@ const JumboTitle = styled.p`
   font-weight: 500;
   font-size: 50px;
   text-shadow: 6px 2px 2px gray;
+
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(250, 250, 250, 0.2)));
 `;
 
 const KeepRotate = keyframes`
