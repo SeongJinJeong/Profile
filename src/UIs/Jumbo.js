@@ -85,13 +85,13 @@ const JumboDiv = styled.div`
   width: 100%;
   height: ${(props) => props.clientHeight * 0.1}px;
   min-height: 450px;
-  max-height: 600px;
+  max-height: 600px; 
   background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  margin-top: ${(props) => (props.height ? props.height : 0)}px;
+  // margin-top: ${(props) => (props.height ? props.height : 0)}px;
 `;
 
 const JumboItemDiv = styled.div`

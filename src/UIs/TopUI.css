@@ -1,6 +1,6 @@
 .active {
   background-color: #363636;
-  color: #24e224 !important;
+  color: #ccdeec !important;
 }
 
 .menu {
@@ -8,16 +8,18 @@
 
   color: #f0fff0;
 
-  padding: 0 20px;
+  padding: 0;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  min-width: 75px;
+  width :100%;
 
   font-weight: bold;
   font-size : 30px;
+
+  border-top : 1px solid white;
 }
 
 .menu:hover {

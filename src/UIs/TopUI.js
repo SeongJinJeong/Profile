@@ -52,13 +52,6 @@ const TopUI = (props) => {
         </LogoAnchor>
         <MenuList menu={props.menu} NaviHeight={NaviHeight} />{" "}
         {/* 메뉴를 뽑아줌 */}
-        <LoginDiv>
-          <IconContext.Provider value={{ color: "white", size: "2em" }}>
-            <LoginAnchor href="https://github.com/SeongJinJeong">
-              <GoMarkGithub />
-            </LoginAnchor>
-          </IconContext.Provider>
-        </LoginDiv>
       </TopDiv>
     </>
   );
@@ -67,7 +60,7 @@ const TopUI = (props) => {
 const MenuList = (props) => {
   const Menu = props.menu;
   const MenuLen = Menu.length;
-  console.log(MenuLen)
+  console.log(MenuLen);
   return Menu.map((value, index) => {
     return (
       <Link
@@ -75,7 +68,7 @@ const MenuList = (props) => {
         spy={true}
         smooth={true}
         activeClass="active"
-        className={index===MenuLen-1 ? "menu lastmenu" : "menu"}
+        className={index === MenuLen - 1 ? "menu lastmenu" : "menu"}
         duration={1000}
         delay={200}
         offset={index === 1 ? -props.NaviHeight + 0.1 : -props.NaviHeight - 0.1}
@@ -94,20 +87,19 @@ const Div = styled.div`
   margin: 0;
   color: #2c2c2c;
   background-color: #696969;
-  z-index : 1;
-  position : relative;
+  z-index: 1;
+  position: relative;
 `;
 
 const TopDiv = styled(Div)`
-  height: ${(props) => props.height || 50}px;
+  height: 100%;
   display: flex;
   justify-content: flex-start;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
 
   background-color: #696969;
 `;
@@ -156,7 +148,7 @@ const Logo = styled.img`
   width: 150px;
   height: 150px;
   &:hover {
-    cursor : pointer;
+    cursor: pointer;
   }
 `;
 

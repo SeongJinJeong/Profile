@@ -110,7 +110,7 @@ const Div = styled.div`
 
 const JumboDiv = styled.div`
   width: 100%;
-  margin-top: ${(props) => props.shouldMargin || 0}px;
+  // margin-top: ${(props) => props.shouldMargin || 0}px;
 `;
 
 export default Contents;
