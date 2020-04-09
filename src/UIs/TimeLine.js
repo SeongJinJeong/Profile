@@ -58,6 +58,7 @@ const TimeLine = (props) => {
       contentStyle={{
         color: "white",
         "font-size": "20px",
+        "font-weight":"500",
         "background-color": props.contentColor || "#543864",
         "box-shadow": "5px 5px 5px gray",
       }}

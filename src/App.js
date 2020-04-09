@@ -2,7 +2,7 @@ import React from "react";
 import TOPUI from "./UIs/TopUI";
 import Contents from "./UIs/Contents";
 
-const Menu = ["TimeLine", "Naver", "Nexon", "Laftel", "Facebook"];
+const Menu = ["TimeLine", "Skills", "Nexon", "Laftel", "Facebook"];
 
 function App() {
   return (

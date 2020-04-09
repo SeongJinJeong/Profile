@@ -11,6 +11,7 @@ import {
 import styled from "styled-components";
 import Jumbo from "./Jumbo";
 import TimeLines from "./TimeLine";
+import Skills from "./Skills";
 
 const Contents = (props) => {
   const [naviHeight, setNaviHeight] = useState("");
@@ -38,9 +39,14 @@ const Contents = (props) => {
 
   return (
     <>
-      <Jumbo height={naviHeight} />
-      <div id="TimeLine"><TimeLines/></div>
-      <RenderDiv menu={props.menu} height={naviHeight} />
+      <JumboDiv shouldMargin={naviHeight}><Jumbo height={naviHeight} /></JumboDiv>
+      <div id="TimeLine">
+        <TimeLines />
+      </div>
+      <div id="Skills">
+        <Skills />
+      </div>
+      {/* <RenderDiv menu={props.menu} height={naviHeight} /> */}
     </>
   );
 };
@@ -50,7 +56,7 @@ const RenderDiv = (props) => {
   return Menu.map((value, index) => {
     if (index === 0)
       return (
-        <Div color={index}  key={index} shouldMargin={props.height}>
+        <Div color={index} key={index} shouldMargin={props.height}>
           {value}
         </Div>
       );
@@ -100,6 +106,11 @@ const Div = styled.div`
       return "palevioletred";
     }
   }};
+`;
+
+const JumboDiv = styled.div`
+  width: 100%;
+  margin-top: ${(props) => props.shouldMargin || 0}px;
 `;
 
 export default Contents;
