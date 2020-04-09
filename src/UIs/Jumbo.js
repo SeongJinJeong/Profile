@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { IconContext } from "react-icons";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaLongArrowAltDown } from "react-icons/fa";
 
 import Modal from "react-modal";
 Modal.setAppElement("#root");
@@ -25,6 +25,13 @@ const Jumbo = (props) => {
     <>
       <JumboDiv height={props.height} clientHeight={clientHeight}>
         <JumboItemDiv>
+          <HiddenIcon>
+            <Arrow>
+              <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
+                <FaLongArrowAltDown />
+              </IconContext.Provider>
+            </Arrow>
+          </HiddenIcon>
           <IconContext.Provider value={{ color: "white", size: "4em" }}>
             <ReactLogo>
               <FaReact
@@ -81,11 +88,16 @@ const RemainDate = () => {
   );
 };
 
+const Arrow = styled.p`
+  display: none;
+  float: right;
+`;
+
 const JumboDiv = styled.div`
   width: 100%;
   height: ${(props) => props.clientHeight * 0.1}px;
   min-height: 450px;
-  max-height: 600px; 
+  max-height: 600px;
   background-color: black;
   display: flex;
   justify-content: center;
@@ -97,6 +109,12 @@ const JumboItemDiv = styled.div`
   color: white;
 
   text-align: center;
+
+  &:hover {
+    ${Arrow} {
+      display: inline;
+    }
+  }
 `;
 
 const JumboTitle = styled.p`
@@ -118,6 +136,12 @@ const ReactLogo = styled.button`
   background-color: black;
   border: none;
   z-index: -1;
+`;
+
+const HiddenIcon = styled.div`
+  position: fixed;
+  top: 0;
+  left: 49.5%;
 `;
 
 const ModalDiv = styled.div`
