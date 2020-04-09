@@ -10,6 +10,7 @@ import {
 } from "react-scroll";
 import styled from "styled-components";
 import Jumbo from "./Jumbo";
+import TimeLine from './TimeLine'
 
 const Contents = (props) => {
   const [naviHeight, setNaviHeight] = useState("");
@@ -38,6 +39,7 @@ const Contents = (props) => {
   return (
     <>
       <Jumbo height={naviHeight}/>
+      <TimeLine />
       <RenderDiv menu={props.menu} height={naviHeight} />
     </>
   );
