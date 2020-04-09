@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { IconContext } from "react-icons";
-import { DiMysql,DiJavascript1 } from "react-icons/di";
-import { FaReact,FaNode,FaAws,FaCss3,FaHtml5 } from "react-icons/fa";
+import { DiMysql, DiJavascript1 } from "react-icons/di";
+import { FaReact, FaNode, FaAws, FaCss3, FaHtml5 } from "react-icons/fa";
 
 const Skills = () => {
   return (
@@ -50,7 +50,6 @@ const Div = styled.div`
   background-color: black;
   display: flex;
   justify-content: center;
-
 `;
 
 const Container = styled(Div)`
@@ -60,16 +59,18 @@ const Container = styled(Div)`
   display: flex;
 
   justify-content: center;
-  flex-wrap : wrap;
+  flex-wrap: wrap;
 
   border-radius: 30px;
 
-  margin : 50px 0px;
+  margin: 50px 0px;
 `;
 
 const Card = styled.div`
-  min-width: 15%;
-  height : 30%;
+  min-width: 130px;
+  max-width: 130px;
+  max-height: 150px;
+  min-height: 150px;
   display: block;
   text-align: center;
 
