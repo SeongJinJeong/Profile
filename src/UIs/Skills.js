@@ -55,7 +55,7 @@ const Div = styled.div`
 
 const Container = styled(Div)`
   width: 50%;
-  height : 500px;
+  height : auto;
   background-color: #2c2c2c;
   display: flex;
 
