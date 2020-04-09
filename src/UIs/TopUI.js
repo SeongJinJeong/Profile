@@ -71,7 +71,7 @@ const MenuList = (props) => {
         className={index === MenuLen - 1 ? "menu lastmenu" : "menu"}
         duration={1000}
         delay={200}
-        offset={index === 1 ? -props.NaviHeight + 0.1 : -props.NaviHeight - 0.1}
+        offset={index === 0 ? -props.NaviHeight + 0.1 : -props.NaviHeight - 0.1}
         key={index}
       >
         {value}
@@ -102,6 +102,9 @@ const TopDiv = styled(Div)`
   left: 0;
 
   background-color: #696969;
+
+  
+  box-shadow: 10px 0px 12px 0px #543864;
 `;
 
 const LoginDiv = styled(Div)`

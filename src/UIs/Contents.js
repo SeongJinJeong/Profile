@@ -39,10 +39,12 @@ const Contents = (props) => {
 
   return (
     <>
-      <JumboDiv shouldMargin={naviHeight}><Jumbo height={naviHeight} /></JumboDiv>
-      <div id="TimeLine">
-        <TimeLines />
-      </div>
+      <JumboDiv shouldMargin={naviHeight}>
+        <Jumbo height={naviHeight} />
+      </JumboDiv>
+
+      <TimeLines />
+
       <div id="Skills">
         <Skills />
       </div>
