@@ -104,7 +104,7 @@ const TopDiv = styled(Div)`
   background-color: #696969;
 
   
-  box-shadow: 10px 0px 12px 0px #543864;
+  box-shadow: 10px 0px 12px 0px #323232;
 `;
 
 const LoginDiv = styled(Div)`
