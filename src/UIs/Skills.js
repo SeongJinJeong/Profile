@@ -8,7 +8,7 @@ const Skills = () => {
   return (
     <>
       <Div>
-        <Container>
+        <Container id="Skills">
           <RenderCard icon={<FaReact />} title={"React"} sub={"INTERMEDIATE"} />
           <RenderCard
             icon={<FaNode />}
@@ -54,7 +54,7 @@ const Div = styled.div`
 
 const Container = styled(Div)`
   width: 50%;
-  height : auto;
+  height: auto;
   background-color: #2c2c2c;
   display: flex;
 

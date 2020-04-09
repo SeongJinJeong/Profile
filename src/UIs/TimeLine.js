@@ -6,8 +6,8 @@ import { MdSchool } from "react-icons/md";
 
 const TimeLines = () => {
   return (
-    <Div id="TimeLine">
-      <Container>
+    <Div>
+      <Container id="TimeLine">
         <Timeline>
           <TimeLine
             title={"Birth"}
@@ -58,7 +58,7 @@ const TimeLine = (props) => {
       contentStyle={{
         color: "white",
         "font-size": "20px",
-        "font-weight":"500",
+        "font-weight": "500",
         "background-color": props.contentColor || "#543864",
         "box-shadow": "5px 5px 5px gray",
       }}
@@ -84,7 +84,7 @@ const Container = styled(Div)`
   background-color: #2c2c2c;
   border-radius: 30px 30px 30px 30px;
 
-  margin:50px 0px;
+  margin: 50px 0px;
 `;
 
 export default TimeLines;

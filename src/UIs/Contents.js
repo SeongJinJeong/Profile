@@ -45,9 +45,8 @@ const Contents = (props) => {
 
       <TimeLines />
 
-      <div id="Skills">
-        <Skills />
-      </div>
+      <Skills />
+
       {/* <RenderDiv menu={props.menu} height={naviHeight} /> */}
     </>
   );
