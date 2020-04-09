@@ -59,7 +59,7 @@ const TimeLine = (props) => {
         color: "white",
         "font-size": "20px",
         "background-color": props.contentColor || "#543864",
-        "box-shadow":"5px 5px 5px gray"
+        "box-shadow": "5px 5px 5px gray",
       }}
       bubbleStyle={{
         "background-color": props.bubbleColor || "#2c2c2c",
@@ -81,10 +81,10 @@ const Div = styled.div`
 const Container = styled(Div)`
   width: 50%;
   background-color: #2c2c2c;
-  border-radius : 30px 30px 30px 30px;
+  border-radius: 30px 30px 30px 30px;
 
-  margin-top : 50px;
-  margin-bottom : 50px
+  margin-top: 50px;
+  margin-bottom: 50px;
 `;
 
 export default TimeLines;
