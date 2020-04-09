@@ -90,8 +90,6 @@ const JumboDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  // margin-top: ${(props) => (props.height ? props.height : 0)}px;
 `;
 
 const JumboItemDiv = styled.div`
