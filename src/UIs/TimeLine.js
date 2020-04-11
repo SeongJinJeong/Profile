@@ -52,19 +52,19 @@ const TimeLine = (props) => {
       title={props.title || "NONE"}
       titleStyle={{
         color: props.titleColor || "white",
-        "font-size": "30px",
-        "font-weight": props.now ? "bold" : null,
-        "text-shadow": props.now ? "4px 2px 2px gray" : null,
+        fontSize: "30px",
+        fontWeight: props.now ? "bold" : null,
+        textShadow: props.now ? "4px 2px 2px gray" : null,
       }}
       contentStyle={{
         color: "white",
-        "font-size": "20px",
-        "font-weight": "500",
-        "background-color": props.contentColor || "#543864",
-        "box-shadow": "5px 5px 5px gray",
+        fontSize: "20px",
+        fontWeight: "500",
+        backgroundColor: props.contentColor || "#543864",
+        boxShadow: "5px 5px 5px gray",
       }}
       bubbleStyle={{
-        "background-color": props.bubbleColor || "#2c2c2c",
+        backgroundColor: props.bubbleColor || "#2c2c2c",
       }}
     >
       {props.content || "Please Enter some Texts"}

@@ -42,7 +42,7 @@ const Jumbo = (props) => {
                   openModal();
                 }}
                 style={{
-                  "z-index": 0,
+                  zIndex: 0,
                 }}
               />
             </ReactLogo>
