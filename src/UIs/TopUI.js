@@ -71,7 +71,7 @@ const MenuList = (props) => {
         className={index === MenuLen - 1 ? "menu lastmenu" : "menu"}
         duration={1000}
         delay={200}
-        offset={index === 0 ? -props.NaviHeight + 0.1 : -props.NaviHeight - 0.1}
+        offset={index === 0 ? -props.NaviHeight - 0.1 : -props.NaviHeight - 0.1}
         key={index}
       >
         {value}

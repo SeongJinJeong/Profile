@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { withTheme } from "styled-components";
+import { Div, Container } from "./Components/Div";
 import { Timeline, TimelineEvent } from "react-event-timeline";
 import { IconContext } from "react-icons";
 import { MdSchool } from "react-icons/md";
@@ -70,21 +71,5 @@ const TimeLine = (props) => {
     </TimelineEvent>
   );
 };
-
-const Div = styled.div`
-  width: 100%;
-  text-align: center;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-`;
-
-const Container = styled(Div)`
-  width: 50%;
-  background-color: #2c2c2c;
-  border-radius: 30px 30px 30px 30px;
-
-  margin: 50px 0px;
-`;
 
 export default TimeLines;

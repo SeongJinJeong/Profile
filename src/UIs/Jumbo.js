@@ -38,6 +38,9 @@ const Jumbo = (props) => {
                 onMouseOver={() => {
                   openModal();
                 }}
+                onTouchStart={()=>{
+                  openModal();
+                }}
                 style={{
                   "z-index": 0,
                 }}

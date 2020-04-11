@@ -12,6 +12,7 @@ import styled from "styled-components";
 import Jumbo from "./Jumbo";
 import TimeLines from "./TimeLine";
 import Skills from "./Skills";
+import Contact from "./Contact";
 
 const Contents = (props) => {
   const [naviHeight, setNaviHeight] = useState("");
@@ -47,33 +48,9 @@ const Contents = (props) => {
 
       <Skills />
 
-      {/* <RenderDiv menu={props.menu} height={naviHeight} /> */}
+      <Contact />
     </>
   );
-};
-
-const RenderDiv = (props) => {
-  const Menu = props.menu;
-  return Menu.map((value, index) => {
-    if (index === 0)
-      return (
-        <Div color={index} key={index} shouldMargin={props.height}>
-          {value}
-        </Div>
-      );
-    else {
-      return (
-        <Div
-          color={index}
-          id={value}
-          key={index}
-          lastContent={index === Menu.length - 1 ? true : false}
-        >
-          {value}
-        </Div>
-      );
-    }
-  });
 };
 
 const Div = styled.div`

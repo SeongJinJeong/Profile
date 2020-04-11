@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Div, Container } from "./Components/Div";
 import { IconContext } from "react-icons";
 import { DiMysql, DiJavascript1 } from "react-icons/di";
 import { FaReact, FaNode, FaAws, FaCss3, FaHtml5 } from "react-icons/fa";
@@ -9,6 +10,7 @@ const Skills = () => {
     <>
       <Div>
         <Container id="Skills">
+          {/* <Container> */}
           <RenderCard icon={<FaReact />} title={"React"} sub={"INTERMEDIATE"} />
           <RenderCard
             icon={<FaNode />}
@@ -24,6 +26,7 @@ const Skills = () => {
           />
           <RenderCard icon={<FaCss3 />} title={"CSS"} sub={"INTERMEDIATE"} />
           <RenderCard icon={<FaHtml5 />} title={"HTML"} sub={"INTERMEDIATE"} />
+          {/* </Container> */}
         </Container>
       </Div>
     </>
@@ -43,28 +46,6 @@ const RenderCard = (props) => {
     </Card>
   );
 };
-
-const Div = styled.div`
-  width: 100%;
-  text-align: center;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-`;
-
-const Container = styled(Div)`
-  width: 50%;
-  height: auto;
-  background-color: #2c2c2c;
-  display: flex;
-
-  justify-content: center;
-  flex-wrap: wrap;
-
-  border-radius: 30px;
-
-  margin: 50px 0px;
-`;
 
 const Card = styled.div`
   min-width: 130px;
