@@ -23,7 +23,7 @@ const StyledDiv = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: black;
+  background-color: #000000;
 `;
 
 const StyledContainer = styled.div`

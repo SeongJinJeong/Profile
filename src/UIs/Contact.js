@@ -31,7 +31,7 @@ const Contact = () => {
         flipSpeedFrontToBack={0.6}
         flipSpeedBackToFront={0.4}
       >
-        <Card onMouseOver={handleMouseOver} bgColor="#2c2c2c" front>
+        <Card onMouseOver={handleMouseOver} onTouchEnd={handleMouseOver} bgColor="#2c2c2c" front>
             <MouseIcon>
                 <IconContext.Provider value={{size:"3em",color:"white"}}>
                     <MdMouse />
@@ -58,7 +58,7 @@ const Contact = () => {
               <IconContext.Provider value={{size:"1em",color:"black"}}>
               <Items><FaPhoneVolume /> +82.10.9583.7412</Items>
               <Items><MdMail /> &nbsp;&nbsp;jsj0718tjdwl@naver.com</Items>
-              <Items><GoMarkGithub /> &nbsp;&nbsp;<a href="https://github.com/SeongJinJeong" target="_blank">https://github.com/SeongJinJeong</a></Items>
+              <Items><GoMarkGithub /> &nbsp;&nbsp;<a href="https://github.com/SeongJinJeong" target="_blank" rel="noopener noreferrer">https://github.com/SeongJinJeong</a></Items>
               </IconContext.Provider>
           </Contacts>
         </Card>

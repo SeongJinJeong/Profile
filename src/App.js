@@ -13,6 +13,4 @@ function App() {
   );
 }
 
-console.log(document.getElementsByClassName("TopNavi"));
-
 export default App;

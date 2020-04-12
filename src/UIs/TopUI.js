@@ -8,9 +8,6 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
-import { IconContext } from "react-icons";
-import { GoMarkGithub } from "react-icons/go";
-import { TiDocumentText } from "react-icons/ti";
 
 import "./TopUI.css";
 
@@ -47,37 +44,12 @@ const TopUI = (props) => {
   return (
     <>
       <TopDiv height={NaviHeight} isMobile={isMobile} id="TopNavi">
-        <LogoAnchor onClick={scrollToTop}>
-          <Logo id="logo" src="./logo.png" />
+        <LogoAnchor onClick={scrollToTop} onTouchEnd={scrollToTop}>
+          <Logo id="logo" src="./logo.png" isMobile={isMobile}/>
         </LogoAnchor>
-        <MenuList menu={props.menu} NaviHeight={NaviHeight} />{" "}
-        {/* 메뉴를 뽑아줌 */}
       </TopDiv>
     </>
   );
-};
-
-const MenuList = (props) => {
-  const Menu = props.menu;
-  const MenuLen = Menu.length;
-  console.log(MenuLen);
-  return Menu.map((value, index) => {
-    return (
-      <Link
-        to={value}
-        spy={true}
-        smooth={true}
-        activeClass="active"
-        className={index === MenuLen - 1 ? "menu lastmenu" : "menu"}
-        duration={1000}
-        delay={200}
-        offset={index === 0 ? -props.NaviHeight - 0.1 : -props.NaviHeight - 0.1}
-        key={index}
-      >
-        {value}
-      </Link>
-    );
-  });
 };
 
 // Styled Components
@@ -92,52 +64,18 @@ const Div = styled.div`
 `;
 
 const TopDiv = styled(Div)`
-  height: 100%;
   display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
 
-  background-color: #696969;
+  width: 10%;
 
-  
-  box-shadow: 10px 0px 12px 0px #323232;
-`;
+  margin-left : 10px;
 
-const LoginDiv = styled(Div)`
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  right: 0;
-
-  margin-right: 20px;
-`;
-
-const Anchor = styled.a`
-  text-decoration: none;
-  font-weight: bold;
-  color: #f0fff0;
-
-  height: 100%;
-
-  &:active {
-    color: white;
-  }
-  &:hover {
-    color: #2f4f4f;
-  }
-  &:visited {
-    color: yellow;
-  }
-`;
-
-const LoginAnchor = styled(Anchor)`
-  margin-left: 5px;
+  background-color: #000000;
 `;
 
 const LogoAnchor = styled.a`
@@ -148,8 +86,7 @@ const LogoAnchor = styled.a`
 `;
 
 const Logo = styled.img`
-  width: 150px;
-  height: 150px;
+  width: ${props=>props.isMobile?"200%":"100%"};
   &:hover {
     cursor: pointer;
   }

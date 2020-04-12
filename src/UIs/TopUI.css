@@ -1,10 +1,12 @@
 .active {
   background-color: #363636;
   color: #ccdeec !important;
+  box-shadow: 10px 0px 12px 0px #323232;
 }
 
 .menu {
   height: 100%;
+  width :100%;
 
   color: #f0fff0;
 
@@ -13,8 +15,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  width :100%;
 
   font-weight: 800;
   font-size : 20px;

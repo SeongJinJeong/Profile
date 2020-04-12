@@ -56,7 +56,7 @@ const Jumbo = (props) => {
           shouldCloseOnEsc={true}
           style={{
             overlay: {
-              backgroundColor: "black",
+              backgroundColor: "#000000",
               opacity: 0.8,
             },
             content: {
@@ -101,7 +101,7 @@ const JumboDiv = styled.div`
   height: ${(props) => props.clientHeight * 0.1}px;
   min-height: 450px;
   max-height: 600px;
-  background-color: black;
+  background-color: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -136,7 +136,7 @@ const KeepRotate = keyframes`
 
 const ReactLogo = styled.button`
   animation: ${KeepRotate} 10s linear infinite;
-  background-color: black;
+  background-color: #000000;
   border: none;
   z-index: -1;
 `;

@@ -1,9 +1,6 @@
 import React from "react";
-import styled, { withTheme } from "styled-components";
 import { Div, Container } from "./Components/Div";
 import { Timeline, TimelineEvent } from "react-event-timeline";
-import { IconContext } from "react-icons";
-import { MdSchool } from "react-icons/md";
 
 const TimeLines = () => {
   return (
