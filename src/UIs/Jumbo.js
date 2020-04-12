@@ -61,9 +61,11 @@ const Jumbo = (props) => {
             },
             content: {
               opacity: 1,
-              width: "30%",
+              width: props.isMobile?"70%":"30%",
               height: "30%",
               margin: "auto",
+              marginLeft : "auto",
+              marginRight: "auto"
             },
           }}
         >

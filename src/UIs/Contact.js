@@ -9,7 +9,7 @@ import { IconContext } from "react-icons";
 
 import ReactCardFlip from "react-card-flip";
 
-const Contact = () => {
+const Contact = (props) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleMouseOver = (e) => {
@@ -39,7 +39,7 @@ const Contact = () => {
             </MouseIcon>
         </Card>
         <Card bgColor="white">
-          <IconContext.Provider value={{ size: "3em", color: "#084177" }}>
+          <IconContext.Provider value={props.isMobile?{ size: "1.5em", color: "#084177" }:{ size: "3em", color: "#084177" }}>
             <FaReact
               style={{
                 position: "absolute",
@@ -51,14 +51,14 @@ const Contact = () => {
             />
           </IconContext.Provider>
           <Name>
-            <NameH1>Seongjin Jeong</NameH1>
-            <NameH3>React Developer</NameH3>
+            <NameH1 isMobile={props.isMobile}>Seongjin Jeong</NameH1>
+            <NameH3 isMobile={props.isMobile}>React Developer</NameH3>
           </Name>
           <Contacts>
               <IconContext.Provider value={{size:"1em",color:"black"}}>
-              <Items><FaPhoneVolume /> +82.10.9583.7412</Items>
-              <Items><MdMail /> &nbsp;&nbsp;jsj0718tjdwl@naver.com</Items>
-              <Items><GoMarkGithub /> &nbsp;&nbsp;<a href="https://github.com/SeongJinJeong" target="_blank" rel="noopener noreferrer">https://github.com/SeongJinJeong</a></Items>
+              <Items isMobile={props.isMobile}><FaPhoneVolume /> +82.10.9583.7412</Items>
+              <Items isMobile={props.isMobile}><MdMail /> &nbsp;&nbsp;jsj0718tjdwl@naver.com</Items>
+              <Items isMobile={props.isMobile}><GoMarkGithub /> &nbsp;&nbsp;<a href="https://github.com/SeongJinJeong" target="_blank" rel="noopener noreferrer">https://github.com/SeongJinJeong</a></Items>
               </IconContext.Provider>
           </Contacts>
         </Card>
@@ -91,7 +91,7 @@ const Name = styled.div`
 
 const NameH1 = styled.h1`
   font-weight: 500;
-  margin: 50px 0px;
+  ${props=>props.isMobile?null:"margin: 50px 0px"};
   margin-bottom: 0px;
 `;
 
@@ -109,7 +109,7 @@ const Contacts = styled.div`
 
 const Items = styled.p`
     border-left : 3px solid blue;
-    padding : 10px;
+    ${props=>props.isMobile?null:"padding : 10px"};
     margin:0px;
 `;
 

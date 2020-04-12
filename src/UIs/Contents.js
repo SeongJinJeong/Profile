@@ -41,14 +41,14 @@ const Contents = (props) => {
   return (
     <>
       <JumboDiv shouldMargin={naviHeight}>
-        <Jumbo height={naviHeight} />
+        <Jumbo height={naviHeight} isMobile={props.isMobile}/>
       </JumboDiv>
 
       <TimeLines />
 
       <Skills />
 
-      <Contact />
+      <Contact isMobile={props.isMobile}/>
     </>
   );
 };

@@ -31,11 +31,9 @@ const TopUI = (props) => {
     };
   });
   const browserHeight = window.innerHeight;
-  let isMobile = false;
-  if (window.innerWidth <= 768) isMobile = true; // 모바일인지 확인
 
   let NaviHeight = (browserHeight / 100) * 10;
-  if (isMobile === true) NaviHeight = (browserHeight / 100) * 12; // 모바일 or 웹 높이 지정
+  if (props.isMobile === true) NaviHeight = (browserHeight / 100) * 12; // 모바일 or 웹 높이 지정
 
   const scrollToTop = () => {
     scroll.scrollToTop();
@@ -43,9 +41,9 @@ const TopUI = (props) => {
 
   return (
     <>
-      <TopDiv height={NaviHeight} isMobile={isMobile} id="TopNavi">
+      <TopDiv height={NaviHeight} isMobile={props.isMobile} id="TopNavi">
         <LogoAnchor onClick={scrollToTop} onTouchEnd={scrollToTop}>
-          <Logo id="logo" src="./logo.png" isMobile={isMobile}/>
+          <Logo id="logo" src="./logo.png" isMobile={props.isMobile}/>
         </LogoAnchor>
       </TopDiv>
     </>
