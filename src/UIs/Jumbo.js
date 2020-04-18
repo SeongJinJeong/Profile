@@ -57,7 +57,7 @@ const Jumbo = (props) => {
           style={{
             overlay: {
               backgroundColor: "#000000",
-              opacity: 0.8,
+              opacity: 0.9,
             },
             content: {
               opacity: 1,
